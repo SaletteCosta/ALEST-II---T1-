@@ -17,12 +17,14 @@ public class ManipulaMatriz {
         return linha;
     }
 
-    public char acharRaiz() {
-        int ultimaLinha = LeituraArvore.getUltimaLinha();
+    public int[] acharRaiz() {
+        int ultimaLinha = matriz.length - 1;
         for (int i = 0; i < matriz[ultimaLinha].length; i++) {
-            if(matriz[ultimaLinha][i] != ' '){
-            return matriz[ultimaLinha][i];
+            if (matriz[ultimaLinha][i] != ' ') {
+                return new int[]{ultimaLinha, i};
+            }
         }
+        return new int[]{-1, -1};
     }
 
     // iremos trabalhar com manipulação de indices da matriz ex: o filho a esquerda esta uma linha acima e uma coluna a frente
@@ -30,6 +32,6 @@ public class ManipulaMatriz {
     //o filho a direita dp pai na linha 23, cpluna 20 esta na linha 22 coluna 21
     // quando houver cruzamento, sobe a linha e verifica o char a esquerda pu dieita para ver s ha um outro traço, numero ou nodo folha
 
-        return 0;
-    }
+
+
 }
