@@ -13,7 +13,7 @@ public class ManipulaMatriz {
     }
 
     private void pegarMatriz() {
-        matriz = LeituraArvore.lerArquivo("casof1.txt");
+        matriz = LeituraArvore.lerArquivo("casof30.txt");
     }
 
     public List<String> percorrerArvore() {
@@ -90,11 +90,6 @@ public class ManipulaMatriz {
                 return;
             }
 
-            if (valorAtual == 'W') {
-                percorrerTrifurcacao(new int[]{linha - 1, coluna}, caminhos);
-                return;
-            }
-
             linha--;
             if (linha < 0) break;
         }
@@ -120,11 +115,6 @@ public class ManipulaMatriz {
 
             if (valorAtual == 'V') {
                 percorrerBifurcacao(new int[]{linha - 1, coluna - 1}, caminhos);
-                return;
-            }
-
-            if (valorAtual == 'W') {
-                percorrerTrifurcacao(new int[]{linha - 1, coluna - 1}, caminhos);
                 return;
             }
 
@@ -154,11 +144,6 @@ public class ManipulaMatriz {
 
             if (valorAtual == 'V') {
                 percorrerBifurcacao(new int[]{linha - 1, coluna + 1}, caminhos);
-                return;
-            }
-
-            if (valorAtual == 'W') {
-                percorrerTrifurcacao(new int[]{linha - 1, coluna + 1}, caminhos);
                 return;
             }
 
