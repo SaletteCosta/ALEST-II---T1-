@@ -86,7 +86,14 @@ public class ManipulaMatriz {
             }
 
             if (valorAtual == 'V') {
+                System.out.println("Bifurcação encontrada verticalmente.");
                 percorrerBifurcacao(new int[]{linha - 1, coluna}, caminhos);
+                return;
+            }
+
+            if (valorAtual == 'W') {
+                System.out.println("Trifurcação encontrada verticalmente.");
+                percorrerTrifurcacao(new int[]{linha - 1, coluna}, caminhos);
                 return;
             }
 
@@ -96,6 +103,8 @@ public class ManipulaMatriz {
 
         caminhos.add(caminhoAtual.toString());
     }
+
+
 
     public void percorrerEsquerda(int[] posicaoRaiz, List<String> caminhos) {
         int linha = posicaoRaiz[0];
@@ -114,7 +123,14 @@ public class ManipulaMatriz {
             }
 
             if (valorAtual == 'V') {
+                System.out.println("Bifurcação encontrada à esquerda.");
                 percorrerBifurcacao(new int[]{linha - 1, coluna - 1}, caminhos);
+                return;
+            }
+
+            if (valorAtual == 'W') {
+                System.out.println("Trifurcação encontrada à esquerda.");
+                percorrerTrifurcacao(new int[]{linha - 1, coluna - 1}, caminhos);
                 return;
             }
 
@@ -125,6 +141,7 @@ public class ManipulaMatriz {
 
         caminhos.add(caminhoAtual.toString());
     }
+
 
     public void percorrerDireita(int[] posicaoRaiz, List<String> caminhos) {
         int linha = posicaoRaiz[0];
@@ -143,7 +160,14 @@ public class ManipulaMatriz {
             }
 
             if (valorAtual == 'V') {
+                System.out.println("Bifurcação encontrada à direita.");
                 percorrerBifurcacao(new int[]{linha - 1, coluna + 1}, caminhos);
+                return;
+            }
+
+            if (valorAtual == 'W') {
+                System.out.println("Trifurcação encontrada à direita.");
+                percorrerTrifurcacao(new int[]{linha - 1, coluna + 1}, caminhos);
                 return;
             }
 
@@ -154,6 +178,7 @@ public class ManipulaMatriz {
 
         caminhos.add(caminhoAtual.toString());
     }
+
 
     public int[] acharIndiceRaiz() {
         int ultimaLinha = matriz.length - 1;
